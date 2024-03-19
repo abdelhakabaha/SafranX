@@ -82,7 +82,7 @@
 
                 <div class="mt-4">
                     {{-- <x-input-label :value="__('Role')" /> --}}
-                    {{-- <div class="mt-1">
+                    <div class="mt-1">
             <label class="inline-flex items-center">
                 <input type="radio" class="form-radio" name="role" value="organizer">
                 <span class="ml-2">Vendeur</span>
@@ -91,7 +91,7 @@
                 <input type="radio" class="form-radio" name="role" value="user" checked>
                 <span class="ml-2">Client</span>
             </label>
-        </div> --}}
+        </div>
                     <button type="submit"
                         class="w-full mt-6 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans">Register</button>
                 </div>
