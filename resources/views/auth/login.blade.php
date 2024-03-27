@@ -61,7 +61,7 @@
                         In</button>
                 </div>
                 <div class="mt-6 text-center">
-                    <a href="#" class="underline">Sign up for an account</a>
+                    <a href={{ route('register') }} class="underline">Sign up for an account</a>
                 </div>
             </form>
         </div>

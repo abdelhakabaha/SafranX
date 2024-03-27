@@ -1,6 +1,3 @@
-{{-- @dd(auth()->user()->name) --}}
-
-
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -22,7 +19,6 @@
 
 
 
-        <!-- Styles -->
 
     </head>
 
@@ -38,24 +34,12 @@
                   <a class="block md:text-white mr-4" href="#">Contacte</a>
                 </div>
                 <div class="flex text-sm" v-else>
-                    <a class="p-2 ml-2 bg-white text-teal-500 font-semibold leading-none border border-gray-100 rounded hover:border-transparent hover:bg-gray-100" href=" {{ route('auth.login' )}}">Login</a>
-                  <a class="p-2 ml-2 bg-teal-500 text-gray-100 font-semibold leading-none border border-teal-600 rounded hover:border-transparent hover:bg-teal-600" href="{{ route('register') }}">Sign up</a>
+                    <a class="p-2 ml-2 bg-white text-teal-500 font-semibold leading-none border border-gray-100 rounded hover:border-transparent hover:bg-gray-100" href=" {{ route('auth.login' )}}">Logout</a>
+
                 </div>
               </div>
           </nav>
         </header>
-
-
-        <div>    
-          <p align="center">
-             <a href="https://SafranX.com" target="_blank">
-                 <img  padding="0px" src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/20ddaa45163911.5828946fc5bcf.jpg"
-              width="300"  alt="safran logo">
-             </a>
-         </p>
-     </div>
-
-
         <main class="flex justify-center items-center">
           <h1 class="text-3xl text-center">Welcome</h1>
         </main>
@@ -98,10 +82,6 @@
           </nav>
         </div>
       </div>
-
-
-
-   <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>  
     
 
 
@@ -122,5 +102,8 @@
                 </div>
             @endif
         </div>
+
+
+        
     </body>
 </html>

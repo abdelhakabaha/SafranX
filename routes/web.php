@@ -18,6 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/dashboard', function () {
+    return view('DashboardAdmin');
+});
+
 // les Route de registration
 Route::get('/register',  [AuthController::class, 'register'])->name('register');
 Route::post('/register',  [AuthController::class, 'registerPost'])->name('register');

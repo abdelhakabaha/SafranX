@@ -70,6 +70,7 @@
                     @enderror
                 </div>
 
+
                 <div>
                     <label class="text-gray-800 font-semibold block my-3 text-md" for="confirm">Confirm
                         password</label>
@@ -83,15 +84,16 @@
                 <div class="mt-4">
                     {{-- <x-input-label :value="__('Role')" /> --}}
                     <div class="mt-1">
-            <label class="inline-flex items-center">
-                <input type="radio" class="form-radio" name="role" value="organizer">
-                <span class="ml-2">Vendeur</span>
-            </label>
-            <label class="inline-flex items-center ml-6">
-                <input type="radio" class="form-radio" name="role" value="user" checked>
-                <span class="ml-2">Client</span>
-            </label>
-        </div>
+
+                        <label class="inline-flex items-center ml-6">
+                            <input type="radio" class="form-radio" name="role" value="client" checked>
+                            <span class="ml-2">Client</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" class="form-radio" name="role" value="vendeur">
+                            <span class="ml-2">Vendeur</span>
+                        </label>
+                    </div>
                     <button type="submit"
                         class="w-full mt-6 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans">Register</button>
                 </div>
