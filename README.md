@@ -31,7 +31,7 @@ https://github.com/abdelhakabaha/fille_rouge
 
 Clonez le référentiel du projet :
 
-$ git clone git@github.com:AymaneTech/Evento.git
+$ git clone git@github.com:
 
 $ cd SafranX
 
