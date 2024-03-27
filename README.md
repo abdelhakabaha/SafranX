@@ -1,5 +1,4 @@
-<p align="center"><a href="#" target="_blank"><img src="https://github.com/abdelhakabaha/SafranX/assets/144785981/0f4013ac-d481-4249-bf7a-7ca76d3bec9d
- width="400" alt="SafranX"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://media.istockphoto.com/id/1363969586/fr/vectoriel/illustration-vectorielle-de-safran-fleur-de-safran-isol%C3%A9e-sur-fond-blanc.jpg" width="400" alt="Laravel Logo"></a></p>
 
 
 
