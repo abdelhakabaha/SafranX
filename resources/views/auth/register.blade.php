@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="mt-4">
-                    {{-- <x-input-label :value="__('Role')" /> --}}
+                    <x-input-label :value="__('Role')" />
                     <div class="mt-1">
 
                         <label class="inline-flex items-center ml-6">

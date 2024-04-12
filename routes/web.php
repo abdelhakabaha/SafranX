@@ -21,6 +21,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/header', function () {
+    return view('header');
+});
 
 Route::get('/dashboard', function () {
     return view('DashboardAdmin');
