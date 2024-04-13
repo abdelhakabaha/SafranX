@@ -21,6 +21,8 @@
 
 </head>
 <body class="text-gray-800 font-inter">
+
+    
     <!--sidenav -->
     <div class="fixed left-0 top-0 w-64 h-full bg-[#f8f4f3] p-4 z-50 sidebar-menu transition-transform">
         <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
@@ -259,6 +261,7 @@
                     }
                 </script>
 
+
                 <li class="dropdown ml-3">
                     <button type="button" class="dropdown-toggle flex items-center">
                         <div class="flex-shrink-0 w-10 h-10 relative">
@@ -375,10 +378,6 @@
                 </div>
             </div>
 
-
-
-
-
         {{-- le tableau des utilisateurs --}}
         <div id="last-users">
             <h1 class="font-bold py-4 uppercase">Les utilisateurs</h1>
@@ -387,20 +386,21 @@
                     <thead class="bg-black/60">
                         <th class="text-left py-3 px-2 rounded-l-lg">Name</th>
                         <th class="text-left py-3 px-2">Email</th>
-                        <th class="text-left py-3 px-2">Group</th>
+                        <th class="text-left py-3 px-2">role</th>
                         <th class="text-left py-3 px-2">Status</th>
                         <th class="text-left py-3 px-2 rounded-r-lg">Actions</th>
                     </thead>
+                    @foreach($users as $user)
                     <tr class="border-b border-gray-700">
                         <td class="py-3 px-2 font-bold">
                             <div class="inline-flex space-x-3 items-center">
                                 <span><img class="rounded-full w-8 h-8" src="https://images.generated.photos/tGiLEDiAbS6NdHAXAjCfpKoW05x2nq70NGmxjxzT5aU/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTM4ODM1LmpwZw.jpg" alt=""></span>
-                                <span>Thai Mei</span>
+                                <span>{{ $user->name }}</span>
                             </div>
                         </td>
-                        <td class="py-3 px-2">thai.mei@abc.com</td>
-                        <td class="py-3 px-2">User</td>
-                        <td class="py-3 px-2">Approved</td>
+                        <td class="py-3 px-2">{{ $user->email }}</td>
+                        <td class="py-3 px-2">{{ $user->role }}</td>
+                        <td class="py-3 px-2">{{ $user->role }}</td>
                         <td class="py-3 px-2">
                             <div class="inline-flex items-center space-x-3">
                                 <a href="" title="Edit" class="hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -418,6 +418,7 @@
                             </div>
                         </td>
                     </tr>
+                    @endforeach
                 </table>
             </div>
         </div>

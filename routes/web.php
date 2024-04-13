@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\AuthController;
 
 /*
@@ -28,6 +29,11 @@ Route::get('/header', function () {
 Route::get('/dashboard', function () {
     return view('DashboardAdmin');
 });
+
+// Route::get('/DashboardAdmin',  [UserController::class, 'index'])->name('index');
+
+Route::get('/dashboard', [UserController::class, 'index'])->name('dachboard.index');
+
 
 // les Route de registration
 Route::get('/register',  [AuthController::class, 'register'])->name('register');
