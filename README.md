@@ -52,13 +52,14 @@ $ php artisan serve
    
 <p align="center">
     <a href="https://SafranX.com" target="_blank">
-         <img src="Capture d'écran 2024-04-13 153152.png"
+         <img src="Capture d'écran 2024-04-13 153152"
              alt="class diagramme">
     </a>
 </p>
 
 
          
+
 
 
 
