@@ -29,6 +29,12 @@ Route::get('/header', function () {
 Route::get('/dashboard', function () {
     return view('DashboardAdmin');
 });
+Route::get('/creeProduit.', function () {
+    return view('layoute.creeProduit');
+});
+Route::get('/dashboard', function () {
+    return view('DashboardAdmin');
+});
 
 // Route::get('/DashboardAdmin',  [UserController::class, 'index'])->name('index');
 
