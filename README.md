@@ -50,14 +50,11 @@ $ php artisan serve
 ## Conception
 
    
-<p align="center">
-    <a href="https://SafranX.com" target="_blank">
-         <img src="Capture d'écran 2024-03-27 224948.png"
-             alt="class diagramme">
-    </a>
-</p>
+<img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/20ddaa45163911.5828946fc5bcf.jpg"
+
 
          
+
 
 
 
