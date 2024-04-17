@@ -17,6 +17,13 @@ class ArticlController extends Controller
         return view('dashboard.ArticleDachbord', compact('articls'));
     }
 
+    public function voireArticle()
+    {
+        $article = Articl::findOrFail(2); // Récupère l'article par son ID
+        return view('layoute.voireArticle', compact('article'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
@@ -67,17 +74,17 @@ class ArticlController extends Controller
 
 
     // Méthode pour afficher le formulaire de modification
-    public function edit()
+    public function edit($id)
     {
-        $article = Articl::findOrFail(2); // Récupère l'article par son ID
+        $article = Articl::findOrFail($id); // Récupère l'article par son ID
         return view('layoute.updateArticle', compact('article'));
     }
 
     //Méthode pour mettre à jour l'article dans la base de données
-    public function update(Request $request )
+    public function update(Request $request, $id )
     {
         // dd($request);
-        $article = Articl::findOrFail(2); // Récupère l'article par son ID
+        $article = Articl::findOrFail($id); // Récupère l'article par son ID
 
         // Validation des données du formulaire
         $articleData = $request->validate([
@@ -115,8 +122,12 @@ class ArticlController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Articl $articl)
+    public function destroy( $id)
     {
-        //
+        $article = Articl::findOrFail($id);
+        $article->delete();
+
+        return redirect()->back()->with('success', 'Article deleted successfully!');
+    
     }
 }

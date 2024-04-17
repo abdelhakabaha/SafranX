@@ -80,19 +80,6 @@
                 </ul>
             </li>
 
-
-
-            
-
-
-
-
-
-
-
-
-
-
             <li class="mb-1 group">
                 <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
                     <i class='bx bx-archive mr-3 text-lg'></i>                
@@ -454,7 +441,7 @@ rel="stylesheet"
       <tr class="bg-blue-200 lg:text-black">
           <td class="py-3 px-2 font-bold">
               <div class="inline-flex space-x-3 items-center">
-                <span><img class="rounded-full w-8 h-8" src="{{"$articl->image"}} alt=""></span>
+                <span><img class="rounded-full w-8 h-8" src="{{ asset('storage/'.$articl->image)}}" alt=""></span>
                  <span>{{"$articl->image"}}</span>
               </div>
           </td>
@@ -468,20 +455,22 @@ rel="stylesheet"
               >ACTIVE</span
             >
           </td>
+
           <td class="p-3">
-            <a href="#" class="text-gray-500 hover:text-gray-100 mr-2">
+            <a href="{{ route('layoute.voireArticle') }}" class="text-gray-500 hover:text-gray-100 mr-2">
               <i class="material-icons-outlined text-base">visibility</i>
             </a>
-            <a href="#" class="text-yellow-400 hover:text-gray-100 mx-2">
+            <a href="{{ route('layoute.updateArticle') }}" class="text-yellow-400 hover:text-gray-100 mx-2">
               <i class="material-icons-outlined text-base">edit</i>
             </a>
             <a
-              href="#"
+              href="{{ route('layoute.deleteArticle', $articl->id) }}"
               class="text-red-400 hover:text-gray-100 ml-2"
             >
               <i class="material-icons-round text-base">delete_outline</i>
             </a>
           </td>
+
         </tr>
         @endforeach
       </tbody>
