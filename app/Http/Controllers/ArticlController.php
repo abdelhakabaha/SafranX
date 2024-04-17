@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Articl;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArticlController extends Controller
 {
@@ -66,47 +67,45 @@ class ArticlController extends Controller
 
 
     // Méthode pour afficher le formulaire de modification
-    public function edit($id)
+    public function edit()
     {
-        $article = Articl::findOrFail($id); // Récupère l'article par son ID
-        return view('layoute.creeArticle', compact('article'));
+        $article = Articl::findOrFail(2); // Récupère l'article par son ID
+        return view('layoute.updateArticle', compact('article'));
     }
 
-    // Méthode pour mettre à jour l'article dans la base de données
-    // public function update(Request $request, $id)
-    // {
-    //     $article = Articl::findOrFail($id); // Récupère l'article par son ID
+    //Méthode pour mettre à jour l'article dans la base de données
+    public function update(Request $request )
+    {
+        // dd($request);
+        $article = Articl::findOrFail(2); // Récupère l'article par son ID
 
-    //     // Validation des données du formulaire
-    //     $articleData = $request->validate([
-    //         'title' => 'required|max:255',
-    //         'description' => 'required',
-    //         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // On autorise la mise à jour de l'image, mais elle n'est pas obligatoire
-    //         'date' => 'required|date',
-    //     ]);
+        // Validation des données du formulaire
+        $articleData = $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+        ]);
 
-    //     // Mise à jour des données de l'article
-    //     $article->title = $articleData['title'];
-    //     $article->description = $articleData['description'];
-    //     $article->date = $articleData['date'];
+        // Mise à jour des données de l'article
+        $article->titre = $articleData['title'];
+        $article->description = $articleData['description'];
 
-    //     // Vérification si une nouvelle image est téléchargée
-    //     if ($request->hasFile('image')) {
-    //         // Enregistrement de la nouvelle image
-    //         $imagePath = $request->file('image')->store('article_images', 'public');
-    //         // Supprimer l'ancienne image si elle existe
-    //         if ($article->image) {
-    //             Storage::disk('public')->delete($article->image);
-    //         }
-    //         $article->image = $imagePath;
-    //     }
+        // Vérification si une nouvelle image est téléchargée
+        if ($request->hasFile('image')) {
+            // Enregistrement de la nouvelle image
+            $imagePath = $request->file('image')->store('article_images', 'public');
+            // Supprimer l'ancienne image si elle existe
+            if ($article->image) {
+                Storage::disk('public')->delete($article->image);
+            }
+            $article->image = $imagePath;
+        }
 
-    //     // Sauvegarde des modifications de l'article
-    //     $article->save();
+        // Sauvegarde des modifications de l'article
+        $article->save();
 
-    //     // Redirection avec message de succès
-    //     return redirect()->route('articles.index')->with('success', 'Article updated successfully!');
-    // }
+        // Redirection avec message de succès
+        return redirect()->route('home')->with('success', 'Article updated successfully!');
+    }
 
 
 

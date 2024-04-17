@@ -19,7 +19,7 @@ use App\Http\Controllers\ProduitsController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/home', function () {
     return view('home');
@@ -49,9 +49,9 @@ Route::get('/dashboard.produitDachbord',  [ProduitsController::class, 'index'])-
 //Create Route
 Route::get('/articles/create', [ArticlController::class, 'create'])->name('layoute.creeArticle');
 Route::post('/articles/create', [ArticlController::class, 'store'])->name('layoute.creeArticle');
-//Update route
-// Route::post('/articles/create', [ArticlController::class, 'edite'])->name('layoute.creeArticle');
-// Route::post('/articles/create', [ArticlController::class, 'update'])->name('layoute.creeArticle');
+// Update route
+Route::get('/articles/update', [ArticlController::class, 'edit'])->name('layoute.updateArticle');
+Route::post('/articles/update', [ArticlController::class, 'update'])->name('layoute.update');
 
 
 
