@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ArticlController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\ProduitsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +41,18 @@ Route::get('/dashboard', function () {
 // Route::get('/DashboardAdmin',  [UserController::class, 'index'])->name('index');
 
 Route::get('/dashboard', [UserController::class, 'index'])->name('dachboard.index');
+Route::get('/dashboard.ArticleDachbord',  [ArticlController::class, 'index'])->name('dashboard.ArticleDachbord');
+Route::get('/dashboard.produitDachbord',  [ProduitsController::class, 'index'])->name('dashboard.produitDachbord');
+
+
+
+//Create Route
+Route::get('/articles/create', [ArticlController::class, 'create'])->name('layoute.creeArticle');
+Route::post('/articles/create', [ArticlController::class, 'store'])->name('layoute.creeArticle');
+//Update route
+// Route::post('/articles/create', [ArticlController::class, 'edite'])->name('layoute.creeArticle');
+// Route::post('/articles/create', [ArticlController::class, 'update'])->name('layoute.creeArticle');
+
 
 
 // les Route de registration
@@ -48,3 +62,4 @@ Route::post('/register',  [AuthController::class, 'registerPost'])->name('regist
 // les Route de login
 Route::get('/login',  [AuthController::class, 'login'])->name('auth.login');
 Route::post('/login',  [AuthController::class, 'loginPost'])->name('auth.login');
+

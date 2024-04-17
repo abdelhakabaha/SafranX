@@ -12,7 +12,8 @@ class ProduitsController extends Controller
      */
     public function index()
     {
-        //
+        $produits = Produits::all(); // Récupérer tous les articles
+        return view('dashboard.produitDachbord', compact('produits'));
     }
 
     /**

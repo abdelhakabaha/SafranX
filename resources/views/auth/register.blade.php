@@ -81,8 +81,25 @@
                     @enderror
                 </div>
 
+                <div>
+                    <label class="text-gray-800 font-semibold block my-3 text-md" for="telephone">Your phone</label>
+                    <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="tel"
+                        name="telephone" id="telephone" placeholder="telephone" />
+                    @error('telephone')
+                        <div class="alert text-red-700 alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div>
+                    <label class="text-gray-800 font-semibold block my-3 text-md" for="confirm">Address</label>
+                    <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text"
+                        name="address" id="address" placeholder="address" />
+                    @error('address')
+                        <div class="alert text-red-700 alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+
                 <div class="mt-4">
-                    <x-input-label :value="__('Role')" />
                     <div class="mt-1">
 
                         <label class="inline-flex items-center ml-6">

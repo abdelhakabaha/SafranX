@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRegisterRequest;
+use Exception;
+use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -18,15 +20,19 @@ class AuthController extends Controller
     }
     public function registerPost(UserRegisterRequest $request)
     {
-        $validatedData = $request->validated();
-        User::create([
-            "name" => $request->name,
-            "email" => $request->email,
-            "password" => Hash::make($request->password),
-            "role" => $request->role ?? 'utilisateur',
+        try{
 
-        ]);
-        return back()->with('success', 'register successful');
+            $validatedData = $request->validated();
+            $validatedData["password"] =  Hash::make($request->password);
+
+            $user = User::create($validatedData);
+            
+            auth()->login($user);
+
+            return redirect("/")->with('success', 'register successful');
+        } catch (UniqueConstraintViolationException $e) {
+            return back()->withErrors("duplicate email address");
+        }
     }
     public function login()
     {
