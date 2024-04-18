@@ -1,3 +1,4 @@
+<h1>la liste des catégorie </h1>
 
 
 
@@ -80,10 +81,11 @@
                 </ul>
             </li>
 
+
             <li class="mb-1 group">
-                <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+                <a href="{{ route('dashboard.produitDachbord') }}" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
                     <i class='bx bx-archive mr-3 text-lg'></i>                
-                    <span class="text-sm">Archive</span>
+                    <span class="text-sm">Categorie</span>
                 </a>
             </li>
             <span class="text-gray-400 font-bold">PERSONAL</span>
@@ -411,66 +413,47 @@ rel="stylesheet"
 <div class="col-span-12">
   <div class="overflow-auto lg:overflow-visible">
     <div class="flex lg:justify-between border-b-2 border-fuchsia-900 pb-1">
-      <h2 class="text-2xl text-gray-500 font-bold">All Users</h2>
+      <h2 class="text-2xl text-gray-500 font-bold">All Categorie</h2>
       <div class="text-center flex-auto">
         <input type="text" name="name" placeholder="Search..." class=" w-1/3 py-2 border-b-2 border-blue-600 outline-none focus:border-yellow-400"/>
       </div>
 
       <div>
-        <a href="{{ route('layoute.creeArticle') }}"> <button class="  bg-blue-500  hover:bg-blue-700  text-white  py-1  px-3  sm  rounded-full ">Add new Article</button></a>
+        <a href="{{ route('layoute.creeCategory') }}"> <button class="  bg-blue-500  hover:bg-blue-700  text-white  py-1  px-3  sm  rounded-full ">Add new categoie</button></a>
       </div>
     </div>
     <table class="table text-gray-400 border-separate space-y-6 text-sm">
       <thead class="bg-blue-500 text-white">
         <tr>
-          <th class="p-3">photo</th>
-          <th class="p-3">titre</th>
-          <th class="p-3 text-left">description</th>
-          <th class="p-3 text-left">Phone</th>
-          <th class="p-3 text-left">Role</th>
-
-          <th class="p-3 text-left">Status</th>
-          <th class="p-3 text-left">Action</th>
+          <th class="p-2">name</th>
+          <th class="p-2 text-left">Action</th>
         </tr>
       </thead>
       <tbody>
-    
-      @foreach ($articls as $articl )
-        
+        @foreach ($Categorys as $category )
+        <tr class="bg-blue-200 lg:text-black">
+        <td class="py-2 px-2 font-bold">
+        <td class="p-2 font-medium capitalize">{{ "$category->name" }}</td>
+        </td>
 
-      <tr class="bg-blue-200 lg:text-black">
-          <td class="py-3 px-2 font-bold">
-              <div class="inline-flex space-x-3 items-center">
-                <span><img class="rounded-full w-8 h-8" src="{{ asset('storage/'.$articl->image)}}" alt=""></span>
-                 <span>{{"$articl->image"}}</span>
-              </div>
-          </td>
-          <td class="p-3 font-medium capitalize">{{ "$articl->titre" }}</td>
-          <td class="p-3">{{ "$articl->description" }}</td>
-          <td class="p-3">063334343</td>
-          <td class="p-3 uppercase">user</td>
+          <td class="p-2">
 
-          <td class="p-3">
-            <span class="bg-green-400 text-gray-50 rounded-md px-2"
-              >ACTIVE</span
-            >
-          </td>
-
-          <td class="p-3">
-            <a href="{{ route('layoute.voireArticle') }}" class="text-gray-500 hover:text-gray-100 mr-2">
-              <i class="material-icons-outlined text-base">visibility</i>
-            </a>
-            <a href="{{ route('layoute.updateArticle') }}" class="text-yellow-400 hover:text-gray-100 mx-2">
+            <a href="#" class="text-yellow-400 hover:text-gray-100 mx-2">
               <i class="material-icons-outlined text-base">edit</i>
             </a>
-            <a
-              href="{{ route('layoute.deleteArticle', $articl->id) }}"
+            <form action="/category/delete/{{$category->id}}" method="get">
+                @csrf
+                <button type="submit" class="text-red-400 hover:text-gray-100 mx-2">
+                  <i class="material-icons-outlined text-base">delete</i>
+                </button>
+            </form>
+            {{-- <a
+              href="{{ route('layoute.deleteCategory') }}"
               class="text-red-400 hover:text-gray-100 ml-2"
             >
               <i class="material-icons-round text-base">delete_outline</i>
-            </a>
+            </a> --}}
           </td>
-
         </tr>
         @endforeach
       </tbody>

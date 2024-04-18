@@ -1,11 +1,12 @@
 <?php
 
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticlController;
-use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProduitsController;
-use App\Models\Category;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,25 +48,27 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard', [UserController::class, 'index'])->name('dachboard.index');
 Route::get('/dashboard.ArticleDachbord',  [ArticlController::class, 'index'])->name('dashboard.ArticleDachbord');
 Route::get('/dashboard.produitDachbord',  [ProduitsController::class, 'index'])->name('dashboard.produitDachbord');
+Route::get('/dashboard.CategoryDachbord',  [CategoryController::class, 'index'])->name('dashboard.CategoryDachbord');
 
 
-//Les Route de la Création des article. 
+//Les Routes pour la liste des Categories
+Route::get('/Category/create',  [CategoryController::class, 'create'])->name('layoute.creeCategory');
+Route::post('/Category/create',  [CategoryController::class, 'store'])->name('layoute.creeCategory');
+//Les Route pour la suppression d'une article
+Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('layoute.deleteCategory');
+
+
+
+//Les Route pour la Création des article. 
 Route::get('/articles/create', [ArticlController::class, 'create'])->name('layoute.creeArticle');
 Route::post('/articles/create', [ArticlController::class, 'store'])->name('layoute.creeArticle');
-
-
-// Les Route de Modification des articles.
+// Les Route pour Modification des articles.
 Route::get('/articles/update', [ArticlController::class, 'edit'])->name('layoute.updateArticle');
 Route::post('/articles/update', [ArticlController::class, 'update'])->name('layoute.update');
-
 //les Route pour la visialisation dedétaille d'une article
 Route::get('/articles/voireArticle', [ArticlController::class, 'voireArticle'])->name('layoute.voireArticle');
-
-//Les Route de la suppression d'une article
-
-// Route::get('/articles/delete', [ArticlController::class, 'delete'])->name('layoute.deleteArticle');
+//Les Route pour la suppression d'une article
 Route::get('/articles/voireArticle/{id}', [ArticlController::class, 'destroy'])->name('layoute.deleteArticle');
-
 
 
 // les Route de registration.

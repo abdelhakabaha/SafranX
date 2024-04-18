@@ -81,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="fa fa-unlock-alt" aria-hidden="true"></span> Sign In </a>
 					</li>
 					<li>
-						<a href="{{ route('register') }}" data-toggle="modal" data-target="#myModal2">
+						<a href="{{ route('auth.login') }}" data-toggle="modal" data-target="#myModal2">
 							<span class="fa fa-pencil-square-o" aria-hidden="true"></span> Sign Up </a>
 					</li>
 				</ul>
