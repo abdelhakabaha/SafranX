@@ -11,6 +11,11 @@ class ArticlController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function articleHome()
+    {
+        $articls = Articl::all(); // Récupérer tous les articles
+        return view('z', compact('articls'));
+    }
     public function index()
     {
         $articls = Articl::all(); // Récupérer tous les articles
@@ -30,6 +35,7 @@ class ArticlController extends Controller
     public function create()
     {
         return view('layoute.creeArticle'); 
+        
     }
 
     /**
@@ -63,9 +69,11 @@ class ArticlController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Articl $articl)
+    public function articleDetaille($id)
     {
-        //
+        $articl = Articl::findOrFail($id); // Récupérer tous les articles
+            return view('articleDetaille', compact('articl'));
+        
     }
 
     /**

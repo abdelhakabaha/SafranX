@@ -38,10 +38,9 @@ class CategoryController extends Controller
           // Validation des données du formulaire
            $categoryData = $request->validate([
             'name' => 'required|max:255',
-            // Taille maximale de l'image : 2 Mo
         ]);
 
-        // Création du nouvel article
+        // Création du nouvel catégories
         Category::create([
             "name" => $categoryData["name"],
             "user_id" => $user->id,
@@ -66,17 +65,31 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+        $category = category::findOrFail($id); // Récupère le catégorie par son ID
+        return view('layoute.updateArticle', compact('category'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        //
+        // dd($request);
+        $category = Category::findOrFail($id); // Récupère le catégorie par son ID
+
+        // Validation des données du formulaire
+        $categoryData = $request->validate([
+            'name' => 'required|max:255',
+        ]);
+        // Mise à jour des données des catégories
+        $category->titre = $categoryData['name'];
+        // Sauvegarde des modifications des catégories 
+        $category->save();
+        // Redirection avec message de succès
+        return redirect()->route('home')->with('success', 'category updated successfully!');
+    
     }
 
     /**

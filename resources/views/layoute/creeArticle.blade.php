@@ -1,6 +1,6 @@
 <!-- resources/views/layoute/creeArticle.blade.php -->
 
-<h1>jqjqjjqjjqjqjqjqjqjj</h1>
+<h1>Crée une nouvel article</h1>
 
 
     <div class="container">

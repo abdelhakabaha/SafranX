@@ -26,6 +26,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/ztest', function () {
+    return view('z');
+});
 Route::get('/header', function () {
     return view('header');
 });
@@ -47,6 +50,9 @@ Route::get('/dashboard', function () {
 //les Route de Dashboards d'admin (CRUD des article , produit et category).
 Route::get('/dashboard', [UserController::class, 'index'])->name('dachboard.index');
 Route::get('/dashboard.ArticleDachbord',  [ArticlController::class, 'index'])->name('dashboard.ArticleDachbord');
+Route::get('/ztest',  [ArticlController::class, 'articleHome'])->name('ztest');
+
+
 Route::get('/dashboard.produitDachbord',  [ProduitsController::class, 'index'])->name('dashboard.produitDachbord');
 Route::get('/dashboard.CategoryDachbord',  [CategoryController::class, 'index'])->name('dashboard.CategoryDachbord');
 
@@ -54,6 +60,9 @@ Route::get('/dashboard.CategoryDachbord',  [CategoryController::class, 'index'])
 //Les Routes pour la liste des Categories
 Route::get('/Category/create',  [CategoryController::class, 'create'])->name('layoute.creeCategory');
 Route::post('/Category/create',  [CategoryController::class, 'store'])->name('layoute.creeCategory');
+// Les Route pour Modification des articles.
+Route::get('/category/update', [ArticlController::class, 'edit'])->name('layoute.updateCategory');
+Route::post('/category/update', [ArticlController::class, 'update'])->name('layoute.update');
 //Les Route pour la suppression d'une article
 Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('layoute.deleteCategory');
 
@@ -67,6 +76,8 @@ Route::get('/articles/update', [ArticlController::class, 'edit'])->name('layoute
 Route::post('/articles/update', [ArticlController::class, 'update'])->name('layoute.update');
 //les Route pour la visialisation dedétaille d'une article
 Route::get('/articles/voireArticle', [ArticlController::class, 'voireArticle'])->name('layoute.voireArticle');
+//Les Route pour les détaille de l'article d'une article
+Route::get('/articles/articleDetaille/{id}', [ArticlController::class, 'articleDetaille'])->name('articleDetaille');
 //Les Route pour la suppression d'une article
 Route::get('/articles/voireArticle/{id}', [ArticlController::class, 'destroy'])->name('layoute.deleteArticle');
 

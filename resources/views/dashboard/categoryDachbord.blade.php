@@ -438,13 +438,15 @@ rel="stylesheet"
 
           <td class="p-2">
 
-            <a href="#" class="text-yellow-400 hover:text-gray-100 mx-2">
-              <i class="material-icons-outlined text-base">edit</i>
-            </a>
+            <form action="//category/update {{$category->id}}" method="post">
+                @csrf
+                <button type="submit" class="text-red-400 hover:text-gray-100 mx-2">
+                    <i class="material-icons-outlined text-base">edit</i>
+                </button>
             <form action="/category/delete/{{$category->id}}" method="get">
                 @csrf
                 <button type="submit" class="text-red-400 hover:text-gray-100 mx-2">
-                  <i class="material-icons-outlined text-base">delete</i>
+                    <i class="material-icons-outlined text-base">delete</i>
                 </button>
             </form>
             {{-- <a
