@@ -420,8 +420,7 @@ rel="stylesheet"
           <th class="p-3">photo</th>
           <th class="p-3">titre</th>
           <th class="p-3 text-left">description</th>
-          <th class="p-3 text-left">Phone</th>
-          <th class="p-3 text-left">Role</th>
+
 
           <th class="p-3 text-left">Status</th>
           <th class="p-3 text-left">Action</th>
@@ -436,13 +435,12 @@ rel="stylesheet"
           <td class="py-3 px-2 font-bold">
               <div class="inline-flex space-x-3 items-center">
                 <span><img class="rounded-full w-8 h-8" src="{{ asset('storage/'.$articl->image)}}" alt=""></span>
-                 <span>{{"$articl->image"}}</span>
+
               </div>
           </td>
           <td class="p-3 font-medium capitalize">{{ "$articl->titre" }}</td>
           <td class="p-3">{{ "$articl->description" }}</td>
-          <td class="p-3">063334343</td>
-          <td class="p-3 uppercase">user</td>
+
 
           <td class="p-3">
             <span class="bg-green-400 text-gray-50 rounded-md px-2"
@@ -454,7 +452,7 @@ rel="stylesheet"
             <a href="{{ route('layoute.voireArticle') }}" class="text-gray-500 hover:text-gray-100 mr-2">
               <i class="material-icons-outlined text-base">visibility</i>
             </a>
-            <a href="{{ route('layoute.updateArticle') }}" class="text-yellow-400 hover:text-gray-100 mx-2">
+            <a href="{{ route('layoute.updateArticle',$articl->id) }}" class="text-yellow-400 hover:text-gray-100 mx-2">
               <i class="material-icons-outlined text-base">edit</i>
             </a>
             <a

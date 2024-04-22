@@ -21,6 +21,11 @@ class ArticlController extends Controller
         $articls = Articl::all(); // Récupérer tous les articles
         return view('dashboard.ArticleDachbord', compact('articls'));
     }
+    public function updateArticle()
+    {
+        $articls = Articl::all(); // Récupérer tous les articles
+        return view('layoute.updateAr', compact('articls'));
+    }
 
     public function voireArticle()
     {
@@ -63,7 +68,7 @@ class ArticlController extends Controller
                     "user_id" => $request->user()->id,
                 ]);
         
-                return redirect()->route('layoute.creeArticle')->with('success', 'Article created successfully!');
+                return redirect()->route('dashboard.ArticleDachbord')->with('success', 'Article created successfully!');
             }
         
     /**

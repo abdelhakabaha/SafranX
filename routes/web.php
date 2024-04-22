@@ -71,27 +71,32 @@ Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])->nam
 //Les Route pour la Création des article. 
 Route::get('/articles/create', [ArticlController::class, 'create'])->name('layoute.creeArticle');
 Route::post('/articles/create', [ArticlController::class, 'store'])->name('layoute.creeArticle');
-// Les Route pour Modification des articles.
-Route::get('/articles/update', [ArticlController::class, 'edit'])->name('layoute.updateArticle');
-Route::post('/articles/update', [ArticlController::class, 'update'])->name('layoute.update');
-//les Route pour la visialisation dedétaille d'une article
+//Les Route pour Modification des articles.
+Route::get('/articles/edite/{id}', [ArticlController::class, 'edit'])->name('layoute.updateArticle');
+Route::post('/articles/update/{id}', [ArticlController::class, 'update'])->name('layoute.update');
+//Les Route pour la visialisation dedétaille d'une article
 Route::get('/articles/voireArticle', [ArticlController::class, 'voireArticle'])->name('layoute.voireArticle');
 //Les Route pour les détaille de l'article d'une article
 Route::get('/articles/articleDetaille/{id}', [ArticlController::class, 'articleDetaille'])->name('articleDetaille');
 //Les Route pour la suppression d'une article
 Route::get('/articles/voireArticle/{id}', [ArticlController::class, 'destroy'])->name('layoute.deleteArticle');
 
-//les Route pour la creation des Produit 
+//Les Route pour la création des Produit 
 Route::get('/produit/create', [ArticlController::class, 'create'])->name('layoute.creeProduit');
 Route::get('/produit/create', [ArticlController::class, 'store'])->name('layoute.creeProduit');
+// Les Route pour Modification des Produit 
 
 
-// les Route de registration.
+
+
+
+
+// Les Route de registration.
 Route::get('/register',  [AuthController::class, 'register'])->name('register');
 Route::post('/register',  [AuthController::class, 'registerPost'])->name('register');
 
 
-// les Route de login.
+// Les Route de login.
 Route::get('/login',  [AuthController::class, 'login'])->name('auth.login');
 Route::post('/login',  [AuthController::class, 'loginPost'])->name('auth.login');
 

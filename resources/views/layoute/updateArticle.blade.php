@@ -8,21 +8,23 @@
 
         
 
-        <form method="POST" action="{{ route('layoute.update') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('layoute.update',$article->id) }}" enctype="multipart/form-data">
             @method('POST')
             @csrf
             <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title">
+                <label for="title">titre</label>
+                <input  value="{{ "$article->titre" }}" class="form-control" id="title" name="title">
             </div>
             <div class="form-group">
-                <label for="description">Description</label>
-                <textarea class="form-control" id="description" name="description"></textarea>
+                <label for="title">description</label>
+                <input  value="{{ $article->description }}" class="form-control" id="title" name="description">
             </div>
-            <div class="form-group">
-                <label for="image">Image</label>
-                <input type="file" class="form-control-file" id="image" name="image">
+
+            <div class="mb-4">
+                <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
+                <input type="file" id="image" name="Image" accept="image/*" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
             </div>
+
             {{-- <div class="form-group">
                 <label for="date">Date</label>
                 <input type="date" class="form-control" id="date" name="date">

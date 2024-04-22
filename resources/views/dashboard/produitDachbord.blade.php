@@ -430,7 +430,7 @@ rel="stylesheet"
       </div>
 
       <div>
-        <a href="#"> <button class="  bg-blue-500  hover:bg-blue-700  text-white  py-1  px-3  sm  rounded-full ">Add new Product</button></a>
+        <a href="{{ route('layoute.creeProduit') }}"> <button class="  bg-blue-500  hover:bg-blue-700  text-white  py-1  px-3  sm  rounded-full ">Add new Product</button></a>
       </div>
     </div>
     <table class="table text-gray-400 border-separate space-y-6 text-sm">

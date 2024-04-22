@@ -29,10 +29,10 @@
 						<a class="nav-link" href="#portfolio">Portfolio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#team">Team</a>
+						<a class="nav-link" href="{{ route('register') }}">register</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#contact">Contact</a>
+						<a class="nav-link" href="{{ route('auth.login') }}">login</a>
 					</li>
 				</ul>
 			</div>
