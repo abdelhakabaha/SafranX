@@ -48,21 +48,23 @@ class ArticlController extends Controller
      */
     public function store(Request $request)
     {
-  
+        
+        // dd($request->all());
            // Validation des données du formulaire
                 $articleData = $request->validate([
-                    'title' => 'required|max:255',
+                    'titre' => 'required|max:255',
                     'description' => 'required',
                     'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', 
                     // Taille maximale de l'image : 2 Mo
                 ]);
-        
-                // Enregistrement de l'image
+
+                
+           // Enregistrement de l'image
                 $imagePath = $request->file('image')->store('article_images', 'public');
         
                 // Création du nouvel article
                 Articl::create([
-                    "titre" => $articleData["title"],
+                    "titre" => $articleData["titre"],
                     "description" => $articleData["description"],
                     "image" => $imagePath,
                     "user_id" => $request->user()->id,
@@ -124,7 +126,7 @@ class ArticlController extends Controller
         $article->save();
 
         // Redirection avec message de succès
-        return redirect()->route('home')->with('success', 'Article updated successfully!');
+        return redirect()->route('dashboard.ArticleDachbord')->with('success', 'Article updated successfully!');
     }
 
 

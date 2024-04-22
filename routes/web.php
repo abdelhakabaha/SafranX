@@ -82,9 +82,14 @@ Route::get('/articles/articleDetaille/{id}', [ArticlController::class, 'articleD
 Route::get('/articles/voireArticle/{id}', [ArticlController::class, 'destroy'])->name('layoute.deleteArticle');
 
 //Les Route pour la création des Produit 
-Route::get('/produit/create', [ArticlController::class, 'create'])->name('layoute.creeProduit');
-Route::get('/produit/create', [ArticlController::class, 'store'])->name('layoute.creeProduit');
-// Les Route pour Modification des Produit 
+Route::get('/produit/create', [produitsController::class, 'create'])->name('layoute.creeProduit');
+// Route::get('/produit/create', [produitsController::class, 'store'])->name('layoute.creeProduit');
+// Les Route pour Modification des Produit
+
+// Les Route pour Supprition des Produit
+Route::get('/produit/dashboard.produitDachbord/{id}', [produitsController::class, 'destroy'])->name('layoute.deleteProduit');
+
+
 
 
 

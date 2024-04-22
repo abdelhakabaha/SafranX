@@ -460,17 +460,9 @@ rel="stylesheet"
           <td class="p-3 font-medium capitalize">{{ "$produit->name" }}</td>
           <td class="p-3">{{ "$produit->description" }}</td>
           <td class="p-3">{{ "$produit->prix "}}</td>
-          <td class="p-3 uppercase"> {{ "$produit->prix "}}</td>
-          <td class="p-3 uppercase">{{ "$produit->stock "}}</td>
           <td class="p-3 uppercase"> {{ "$produit->stock "}}</td>
           <td class="p-3 uppercase">{{ "$produit->user_id"}}</td>
           <td class="p-3 uppercase">{{ "$produit->categorie_id "}}</td>
-
-          <td class="p-3">
-            <span class="bg-green-400 text-gray-50 rounded-md px-2"
-              >ACTIVE</span
-            >
-          </td>
           <td class="p-3">
             <a href="#" class="text-gray-500 hover:text-gray-100 mr-2">
               <i class="material-icons-outlined text-base">visibility</i>
@@ -478,12 +470,17 @@ rel="stylesheet"
             <a href="#" class="text-yellow-400 hover:text-gray-100 mx-2">
               <i class="material-icons-outlined text-base">edit</i>
             </a>
+
+
+
             <a
-              href="#"
-              class="text-red-400 hover:text-gray-100 ml-2"
-            >
+              {{-- href="{{ route('layoute.deleteProduit', $produits->id) }}" --}}
+              class="text-red-400 hover:text-gray-100 ml-2">
               <i class="material-icons-round text-base">delete_outline</i>
             </a>
+
+
+
           </td>
         </tr>
         @endforeach

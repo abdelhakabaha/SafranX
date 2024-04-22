@@ -7,11 +7,13 @@
     <title>Formulaire de création de produit</title>
     <!-- Ajoutez le lien vers le CDN de Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100 p-4">
+</head>       
+<style></style>
+<body class="bg-gray-100 p-4 style " >
     <div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
         <h1 class="text-2xl font-bold mb-6">Création d'un nouveau produit</h1>
-        <form action="/product/create" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('layoute.creeArticle') }}" method="POST" enctype="multipart/form-data">
+            @method('POST')
             @csrf
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-gray-700">Nom du produit</label>

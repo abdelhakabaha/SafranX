@@ -29,7 +29,7 @@ class ProduitsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -59,8 +59,11 @@ class ProduitsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Produits $produits)
+    public function destroy($id)
     {
-        
+        $article = Produits::findOrFail($id);
+        $article->delete();
+
+        return redirect()->back()->with('success', 'Product deleted successfully!'); 
     }
 }
