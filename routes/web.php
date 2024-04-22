@@ -81,6 +81,10 @@ Route::get('/articles/articleDetaille/{id}', [ArticlController::class, 'articleD
 //Les Route pour la suppression d'une article
 Route::get('/articles/voireArticle/{id}', [ArticlController::class, 'destroy'])->name('layoute.deleteArticle');
 
+//les Route pour la creation des Produit 
+Route::get('/produit/create', [ArticlController::class, 'create'])->name('layoute.creeProduit');
+Route::get('/produit/create', [ArticlController::class, 'store'])->name('layoute.creeProduit');
+
 
 // les Route de registration.
 Route::get('/register',  [AuthController::class, 'register'])->name('register');

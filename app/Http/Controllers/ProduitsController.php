@@ -21,7 +21,7 @@ class ProduitsController extends Controller
      */
     public function create()
     {
-        //
+        return view('layoute.creeProduit'); 
     }
 
     /**
@@ -61,6 +61,6 @@ class ProduitsController extends Controller
      */
     public function destroy(Produits $produits)
     {
-        //
+        
     }
 }

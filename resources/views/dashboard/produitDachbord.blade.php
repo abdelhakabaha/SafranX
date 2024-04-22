@@ -424,13 +424,13 @@ rel="stylesheet"
 <div class="col-span-12">
   <div class="overflow-auto lg:overflow-visible">
     <div class="flex lg:justify-between border-b-2 border-fuchsia-900 pb-1">
-      <h2 class="text-2xl text-gray-500 font-bold">All Users</h2>
+      <h2 class="text-2xl text-gray-500 font-bold">All Product</h2>
       <div class="text-center flex-auto">
         <input type="text" name="name" placeholder="Search..." class=" w-1/3 py-2 border-b-2 border-blue-600 outline-none focus:border-yellow-400"/>
       </div>
 
       <div>
-        <a href="#"> <button class="  bg-blue-500  hover:bg-blue-700  text-white  py-1  px-3  sm  rounded-full ">Add new Article</button></a>
+        <a href="#"> <button class="  bg-blue-500  hover:bg-blue-700  text-white  py-1  px-3  sm  rounded-full ">Add new Product</button></a>
       </div>
     </div>
     <table class="table text-gray-400 border-separate space-y-6 text-sm">
@@ -439,29 +439,32 @@ rel="stylesheet"
           <th class="p-3">photo</th>
           <th class="p-3">titre</th>
           <th class="p-3 text-left">description</th>
-          <th class="p-3 text-left">Phone</th>
-          <th class="p-3 text-left">Role</th>
+          <th class="p-3 text-left">prix</th>
+          <th class="p-3 text-left">stock</th>
 
-          <th class="p-3 text-left">Status</th>
+          <th class="p-3 text-left">user_id</th>
+          <th class="p-3 text-left">categorie</th>
           <th class="p-3 text-left">Action</th>
         </tr>
       </thead>
       <tbody>
     
       @foreach ($produits as $produit )
-        
 
       <tr class="bg-blue-200 lg:text-black">
           <td class="py-3 px-2 font-bold">
               <div class="inline-flex space-x-3 items-center">
                 <span><img class="rounded-full w-8 h-8" src="{{"$produit->image"}}" alt=""></span>
-                 <span>{{"$produit->image"}}</span>
               </div>
           </td>
-          <td class="p-3 font-medium capitalize">{{ "$produit->titre" }}</td>
+          <td class="p-3 font-medium capitalize">{{ "$produit->name" }}</td>
           <td class="p-3">{{ "$produit->description" }}</td>
-          <td class="p-3">01648349009</td>
-          <td class="p-3 uppercase">user</td>
+          <td class="p-3">{{ "$produit->prix "}}</td>
+          <td class="p-3 uppercase"> {{ "$produit->prix "}}</td>
+          <td class="p-3 uppercase">{{ "$produit->stock "}}</td>
+          <td class="p-3 uppercase"> {{ "$produit->stock "}}</td>
+          <td class="p-3 uppercase">{{ "$produit->user_id"}}</td>
+          <td class="p-3 uppercase">{{ "$produit->categorie_id "}}</td>
 
           <td class="p-3">
             <span class="bg-green-400 text-gray-50 rounded-md px-2"
