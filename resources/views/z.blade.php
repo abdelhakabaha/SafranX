@@ -155,6 +155,10 @@
 				</div>
 			</div>
 
+
+
+
+
 			{{-- la partie pour aficher les article sur le home page  --}}
 			<div class="row">
 				@foreach ($articls as $articl )

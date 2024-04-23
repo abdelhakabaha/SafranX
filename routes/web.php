@@ -20,8 +20,8 @@ use App\Http\Controllers\Auth\AuthController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+    return view('z2');
+})->name('z2');
 
 Route::get('/home', function () {
     return view('home');
@@ -51,6 +51,7 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard', [UserController::class, 'index'])->name('dachboard.index');
 Route::get('/dashboard.ArticleDachbord',  [ArticlController::class, 'index'])->name('dashboard.ArticleDachbord');
 Route::get('/ztest',  [ArticlController::class, 'articleHome'])->name('ztest');
+Route::get('/',  [ProduitsController::class, 'produitsHome'])->name('z2');
 
 
 Route::get('/dashboard.produitDachbord',  [ProduitsController::class, 'index'])->name('dashboard.produitDachbord');
@@ -83,11 +84,11 @@ Route::get('/articles/voireArticle/{id}', [ArticlController::class, 'destroy'])-
 
 //Les Route pour la création des Produit 
 Route::get('/produit/create', [produitsController::class, 'create'])->name('layoute.creeProduit');
-// Route::get('/produit/create', [produitsController::class, 'store'])->name('layoute.creeProduit');
+Route::post('/produit/store', [produitsController::class, 'store'])->name('post.creeProduit');
 // Les Route pour Modification des Produit
 
 // Les Route pour Supprition des Produit
-Route::get('/produit/dashboard.produitDachbord/{id}', [produitsController::class, 'destroy'])->name('layoute.deleteProduit');
+Route::get('/produit/delete/{id}', [produitsController::class, 'destroy'])->name('layoute.deleteProduit');
 
 
 

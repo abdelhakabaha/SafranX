@@ -12,8 +12,8 @@
 <body class="bg-gray-100 p-4 style " >
     <div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
         <h1 class="text-2xl font-bold mb-6">Création d'un nouveau produit</h1>
-        <form action="{{ route('layoute.creeArticle') }}" method="POST" enctype="multipart/form-data">
-            @method('POST')
+        <form method="POST" action="{{ route('post.creeProduit') }}" enctype="multipart/form-data">
+            {{-- @method('POST') --}}
             @csrf
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-gray-700">Nom du produit</label>
@@ -27,15 +27,15 @@
             
             <div class="mb-4">
                 <label for="price" class="block text-sm font-medium text-gray-700">Prix</label>
-                <input type="number" id="price" name="price" step="0.01" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
+                <input type="number" id="price" name="prix" step="0.01" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
             </div>
             <div class="mb-4">
                 <label for="price" class="block text-sm font-medium text-gray-700">stock</label>
-                <input type="number" id="price" name="price" step="0.01" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
+                <input type="number" id="price" name="stock" step="0.01" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
             </div>
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-gray-700">type</label>
-                <input type="text" id="name" name="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
+                <input type="text" id="name" name="type" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
             </div>
             <div class="mb-4">
                 <label for="image" class="block text-sm font-medium text-gray-700">Image</label>

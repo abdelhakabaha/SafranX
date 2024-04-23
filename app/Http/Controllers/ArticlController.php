@@ -98,13 +98,12 @@ class ArticlController extends Controller
     //Méthode pour mettre à jour l'article dans la base de données
     public function update(Request $request, $id )
     {
-        // dd($request);
-        $article = Articl::findOrFail($id); // Récupère l'article par son ID
+        $article = Articl::findOrFail($id); 
 
-        // Validation des données du formulaire
         $articleData = $request->validate([
             'title' => 'required|max:255',
             'description' => 'required',
+            'Image' => 'required',
         ]);
 
         // Mise à jour des données de l'article
@@ -112,9 +111,9 @@ class ArticlController extends Controller
         $article->description = $articleData['description'];
 
         // Vérification si une nouvelle image est téléchargée
-        if ($request->hasFile('image')) {
+        if ($request->has('Image')) {
             // Enregistrement de la nouvelle image
-            $imagePath = $request->file('image')->store('article_images', 'public');
+            $imagePath = $request->file('Image')->store('article_images', 'public');
             // Supprimer l'ancienne image si elle existe
             if ($article->image) {
                 Storage::disk('public')->delete($article->image);

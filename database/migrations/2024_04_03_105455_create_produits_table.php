@@ -25,7 +25,7 @@ return new class extends Migration
         });
     }
 
-    /**
+    /**   name,description,prix,stock,image,type,user_id,categorie_id,
      * Reverse the migrations.
      */
     public function down(): void

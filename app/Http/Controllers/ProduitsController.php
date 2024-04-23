@@ -16,6 +16,13 @@ class ProduitsController extends Controller
         return view('dashboard.produitDachbord', compact('produits'));
     }
 
+    public function produitsHome()
+    {
+        $produits = Produits::all(); // Récupérer tous les produits
+        return view('z2', compact('produits'));
+    }
+    
+
     /**
      * Show the form for creating a new resource.
      */
@@ -29,7 +36,45 @@ class ProduitsController extends Controller
      */
     public function store(Request $request)
     {
+            //  dd($request);
+               // Validation des données du formulaire
+                    $produitsData = $request->validate([
+                        'name' => 'required|max:255',
+                        'description' => 'required',
+                        'prix' => 'required',
+                        'type' => 'required',
+                        'stock' => 'required',
+                        'image' =>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
 
+                        // Taille maximale de l'image : 2 Mo
+                    ]);
+    
+
+
+
+                    
+               // Enregistrement de l'image
+                    $imagePath = $request->file('image')->store('article_images', 'public');
+            
+                    // Création du nouvel article
+                    produits::create([
+                        "name"=> $produitsData["name"],
+                        "description" => $produitsData["description"],
+                        "prix"=> $produitsData["prix"],
+                        "type"=> $produitsData["type"],
+                        "stock"=> $produitsData["stock"],
+                        "user_id"=> Auth()->id(),
+                        "categorie_id"=> 4,
+                        "image" => $imagePath,
+
+                        // "titre" => $produitsData["titre"],
+                        // "description" => $produitsData["description"],
+                        // "image" => $imagePath,
+                        // "user_id" => $request->user()->id,
+                    ]);
+            
+                    return redirect()->route('dashboard.produitDachbord')->with('success', 'produits created successfully!');
+                
     }
 
     /**
@@ -67,3 +112,5 @@ class ProduitsController extends Controller
         return redirect()->back()->with('success', 'Product deleted successfully!'); 
     }
 }
+
+

@@ -467,14 +467,16 @@ rel="stylesheet"
             <a href="#" class="text-gray-500 hover:text-gray-100 mr-2">
               <i class="material-icons-outlined text-base">visibility</i>
             </a>
+
+
             <a href="#" class="text-yellow-400 hover:text-gray-100 mx-2">
               <i class="material-icons-outlined text-base">edit</i>
             </a>
 
-
-
             <a
               {{-- href="{{ route('layoute.deleteProduit', $produits->id) }}" --}}
+              href="{{ route('layoute.deleteProduit',$produit->id)}}"
+
               class="text-red-400 hover:text-gray-100 ml-2">
               <i class="material-icons-round text-base">delete_outline</i>
             </a>
