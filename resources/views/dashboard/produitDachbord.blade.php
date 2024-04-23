@@ -433,18 +433,17 @@ rel="stylesheet"
         <a href="{{ route('layoute.creeProduit') }}"> <button class="  bg-blue-500  hover:bg-blue-700  text-white  py-1  px-3  sm  rounded-full ">Add new Product</button></a>
       </div>
     </div>
-    <table class="table text-gray-400 border-separate space-y-6 text-sm">
+    <table class="table text-gray-400 border-separate space-y-8 text-sm">
       <thead class="bg-blue-500 text-white">
         <tr>
           <th class="p-3">photo</th>
           <th class="p-3">titre</th>
-          <th class="p-3 text-left">description</th>
-          <th class="p-3 text-left">prix</th>
-          <th class="p-3 text-left">stock</th>
-
-          <th class="p-3 text-left">user_id</th>
-          <th class="p-3 text-left">categorie</th>
-          <th class="p-3 text-left">Action</th>
+          <th class="p-3 ">description</th>
+          <th class="p-3 ">prix</th>
+          <th class="p-3 ">stock</th>
+          <th class="p-3 ">user_id</th>
+          <th class="p-3 ">categorie</th>
+          <th class="p-3 ">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -454,7 +453,8 @@ rel="stylesheet"
       <tr class="bg-blue-200 lg:text-black">
           <td class="py-3 px-2 font-bold">
               <div class="inline-flex space-x-3 items-center">
-                <span><img class="rounded-full w-8 h-8" src="{{"$produit->image"}}" alt=""></span>
+                {{-- <span><img class="rounded-full w-8 h-8" src="{{"$produit->image"}}" alt=""></span> --}}
+                <span><img class="rounded-full w-8 h-8" src="{{ asset('storage/'.$produit->image)}}" alt=""></span>
               </div>
           </td>
           <td class="p-3 font-medium capitalize">{{ "$produit->name" }}</td>
@@ -469,7 +469,7 @@ rel="stylesheet"
             </a>
 
 
-            <a href="#" class="text-yellow-400 hover:text-gray-100 mx-2">
+            <a href="{{ route('layoute.editeProduit',$produit->id) }}" class="text-yellow-400 hover:text-gray-100 mx-2">
               <i class="material-icons-outlined text-base">edit</i>
             </a>
 

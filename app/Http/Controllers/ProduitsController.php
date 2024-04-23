@@ -88,9 +88,10 @@ class ProduitsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Produits $produits)
+    public function edit($id)
     {
-        //
+        $produits= Produits::findOrFail($id);
+        return view('layoute.updateProduit', compact('produits'));
     }
 
     /**

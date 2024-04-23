@@ -72,7 +72,7 @@
 				<div class="col-12 col-md-12 col-lg-4 mb-4">
 					<div class="card text-light text-center bg-white pb-2">
 						<div class="card-body text-dark">
-							<div class="img-area mb-4"><img height="200px" width="300px" alt="" class="" src="https://th.bing.com/th/id/OIP.d_V3FV4rbkBhgJlyCyc6TQHaJ4?w=211&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"></div>
+							<div class="img-area mb-4"><img height="200px" width="300px" alt="" class="" src="{{ asset('storage/'.$produit->image)}}"></div>
 							<h3 class="card-title">{{ "$produit->titre" }}</h3>
 							<p class="lead text-truncate">{{ "$produit->description" }}</p>
 							<a href="route" ><button class="btn bg-warning text-dark">Learn More</button></a>

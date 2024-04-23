@@ -86,6 +86,7 @@ Route::get('/articles/voireArticle/{id}', [ArticlController::class, 'destroy'])-
 Route::get('/produit/create', [produitsController::class, 'create'])->name('layoute.creeProduit');
 Route::post('/produit/store', [produitsController::class, 'store'])->name('post.creeProduit');
 // Les Route pour Modification des Produit
+Route::get('produits/edite/{id}',[produitsController::class,'edit'])->name('layoute.editeProduit');
 
 // Les Route pour Supprition des Produit
 Route::get('/produit/delete/{id}', [produitsController::class, 'destroy'])->name('layoute.deleteProduit');
