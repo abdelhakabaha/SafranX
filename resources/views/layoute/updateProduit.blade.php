@@ -16,7 +16,7 @@
         }
     </style>
 </head>       
-<style></style>
+
 <body class="bg-gray-100 p-4 style ')] background-image">
 {{-- <body class="bg-gray-100 p-4 style ')]" > --}}
     <div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
