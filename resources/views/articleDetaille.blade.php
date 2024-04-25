@@ -26,7 +26,7 @@
 			  <p>Description détaillée de l'article.</p>
 
 			</div>
-		  </div>
+		  </div>MM
 		</div>
 	  </div>
 

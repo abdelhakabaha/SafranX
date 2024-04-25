@@ -1,43 +1,7 @@
-<!-- resources/views/layoute/creeArticle.blade.php -->
-
-        {{-- <form method="POST" action="{{ route('layoute.update',$article->id) }}" enctype="multipart/form-data">
-            @method('POST')
-            @csrf
-            <div class="form-group">
-                <label for="title">titre</label>
-                <input  value="{{ "$article->titre" }}" class="form-control" id="title" name="title">
-            </div>
-            <div class="form-group">
-                <label for="title">description</label>
-                <input  value="{{ $article->description }}" class="form-control" id="title" name="description">
-            </div>
-
-            <div class="mb-4">
-                <label for="image" class="block text-sm font-medium text-gray-700">{{ "$article->image" }}</label>
-                <input type="file" id="image" name="Image" accept="image/*" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Modifier</button>
-        </form> --}}
-        <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire de modification de produit</title>
-    <!-- Ajoutez le lien vers le CDN de Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Ajoutez votre propre style pour définir l'image de fond */
-        .background-image {
-            background-image: url('https://images.unsplash.com/photo-1631189944771-466264f05965?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNhZnJhbnxlbnwwfHwwfHx8MA%3D%3D');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
-</head>
-<style></style>
+@include('headerForme') 
 <body class="bg-gray-100 p-4 style " >
+    <body class="bg-gray-100 p-4 style ')] background-image">
+        
     <div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
         <h1 class="text-2xl font-bold mb-6">Création d'un nouveau Article</h1>
         <form method="POST" action="{{ route('layoute.update',$article->id) }}" enctype="multipart/form-data">

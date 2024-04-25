@@ -13,12 +13,14 @@ class ArticlController extends Controller
      */
     public function articleHome()
     {
-        $articls = Articl::all(); // Récupérer tous les articles
+        $articls = Articl::get(); // Récupérer tous les articles
+     
         return view('z', compact('articls'));
     }
     public function index()
     {
         $articls = Articl::all(); // Récupérer tous les articles
+        
         return view('dashboard.ArticleDachbord', compact('articls'));
     }
     public function updateArticle()
@@ -144,4 +146,15 @@ class ArticlController extends Controller
         return redirect()->back()->with('success', 'Article deleted successfully!');
     
     }
+
+    public function search(Request $request)
+    {
+        $searchArticl = $request->input('search');
+// dd($searchArticl);
+        $articls = Articl::where('titre', 'like', '%' . $searchArticl . '%')->get();
+
+// dd($articls);
+        return view('z', compact('articls'));
+    }
+
 }

@@ -415,6 +415,14 @@ tr th:nth-child(1) {
 </style>
 
 
+
+
+
+
+
+
+
+
 <!-- component -->
 <link
 href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
@@ -469,7 +477,7 @@ rel="stylesheet"
             </a>
 
 
-            <a href="{{ route('layoute.editeProduit',$produit->id) }}" class="text-yellow-400 hover:text-gray-100 mx-2">
+            <a href="{{ route('layoute.editProduit',$produit->id) }}" class="text-yellow-400 hover:text-gray-100 mx-2">
               <i class="material-icons-outlined text-base">edit</i>
             </a>
 
@@ -498,8 +506,6 @@ rel="stylesheet"
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
 
 </body>
 </html>

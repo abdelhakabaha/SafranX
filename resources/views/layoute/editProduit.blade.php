@@ -1,49 +1,34 @@
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire de création de produit</title>
-    <!-- Ajoutez le lien vers le CDN de Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Ajoutez votre propre style pour définir l'image de fond */
-        .background-image {
-            background-image: url('https://images.unsplash.com/photo-1631189944771-466264f05965?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNhZnJhbnxlbnwwfHwwfHx8MA%3D%3D');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
-</head>       
+@include('headerForme')     
 
 <body class="bg-gray-100 p-4 style ')] background-image">
 {{-- <body class="bg-gray-100 p-4 style ')]" > --}}
     <div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
         <h1 class="text-2xl font-bold mb-6">Création d'un nouveau produit</h1>
-        <form method="POST" action="{{ route('post.creeProduit') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('layoute.updateproduit',$produits->id) }}" enctype="multipart/form-data">
             {{-- @method('POST') --}}
+            @method("PUT")
             @csrf
             <div class="mb-4">
-                <label for="name" class="block text-sm font-medium text-gray-700">Nom du produit</label>
+                <label for="name" class="block text-sm font-medium text-gray-700">{{ "$produits->name" }}</label>
                 <input type="text" id="name" name="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
             </div>
             <div class="mb-4">
-                <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                <label for="description" class="block text-sm font-medium text-gray-700">
+                    {{ "$produits->description" }}</label>
                 <textarea id="description" name="description" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required></textarea>
             </div>
 
             
             <div class="mb-4">
-                <label for="price" class="block text-sm font-medium text-gray-700">Prix</label>
+                <label for="price" class="block text-sm font-medium text-gray-700">{{ "$produits->prix "}}</label>
                 <input type="number" id="price" name="prix" step="0.01" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
             </div>
             <div class="mb-4">
-                <label for="price" class="block text-sm font-medium text-gray-700">stock</label>
+                <label for="price" class="block text-sm font-medium text-gray-700">{{ "$produits->stock "}}</label>
                 <input type="number" id="price" name="stock" step="0.01" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
             </div>
             <div class="mb-4">
-                <label for="name" class="block text-sm font-medium text-gray-700">type</label>
+                <label for="name" class="block text-sm font-medium text-gray-700">{{ "$produits->type" }}</label>
                 <input type="text" id="name" name="type" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
             </div>
             <div class="mb-4">

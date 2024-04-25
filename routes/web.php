@@ -81,12 +81,18 @@ Route::get('/articles/voireArticle', [ArticlController::class, 'voireArticle'])-
 Route::get('/articles/articleDetaille/{id}', [ArticlController::class, 'articleDetaille'])->name('articleDetaille');
 //Les Route pour la suppression d'une article
 Route::get('/articles/voireArticle/{id}', [ArticlController::class, 'destroy'])->name('layoute.deleteArticle');
+//Les Route pour la recherche des articles
+Route::get('/search',[ArticlController::class,'search'])->name('article.search');
+Route::get('/searchProduits',[ProduitsController::class,'searchProduits'])->name('produits.search');
+
 
 //Les Route pour la création des Produit 
 Route::get('/produit/create', [produitsController::class, 'create'])->name('layoute.creeProduit');
 Route::post('/produit/store', [produitsController::class, 'store'])->name('post.creeProduit');
 // Les Route pour Modification des Produit
-Route::get('produits/edite/{id}',[produitsController::class,'edit'])->name('layoute.editeProduit');
+Route::get('produits/edit/{id}',[produitsController::class,'edit'])->name('layoute.editProduit');
+Route::put('/produits/update/{id}', [produitsController::class, 'update'])
+->name('layoute.updateproduit');
 
 // Les Route pour Supprition des Produit
 Route::get('/produit/delete/{id}', [produitsController::class, 'destroy'])->name('layoute.deleteProduit');

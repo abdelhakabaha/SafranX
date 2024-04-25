@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produits;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProduitsController extends Controller
 {
@@ -12,13 +13,13 @@ class ProduitsController extends Controller
      */
     public function index()
     {
-        $produits = Produits::all(); // Récupérer tous les articles
+        $produits = Produits::all(); // Récupérer tous les produit 
         return view('dashboard.produitDachbord', compact('produits'));
     }
 
     public function produitsHome()
     {
-        $produits = Produits::all(); // Récupérer tous les produits
+        $produits = Produits::all(); 
         return view('z2', compact('produits'));
     }
     
@@ -54,9 +55,9 @@ class ProduitsController extends Controller
 
                     
                // Enregistrement de l'image
-                    $imagePath = $request->file('image')->store('article_images', 'public');
+                    $imagePath = $request->file('image')->store('produit_images', 'public');
             
-                    // Création du nouvel article
+                    // Création du nouvel produit 
                     produits::create([
                         "name"=> $produitsData["name"],
                         "description" => $produitsData["description"],
@@ -91,15 +92,54 @@ class ProduitsController extends Controller
     public function edit($id)
     {
         $produits= Produits::findOrFail($id);
-        return view('layoute.updateProduit', compact('produits'));
+        // dd($produits);
+        return view('layoute.editProduit', compact('produits'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Produits $produits)
+    public function update(Request $request, $id)
     {
-        //
+        
+        $produit = Produits::findOrFail($id); 
+         //dd($request);
+        //dd($produit);
+        $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'prix' => 'required',
+            'stock' => 'required',
+            'type' => 'required',
+            'image' =>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+    
+        // Update product data
+        $produit->name = $request->input('name');
+        $produit->description = $request->input('description');
+        $produit->prix = $request->input('prix');
+        $produit->stock = $request->input('stock');
+        $produit->type = $request->input('type');
+
+ // Check if a new image is uploaded
+ if ($request->hasFile('Image')) {
+    // Save the new image
+    $imagePath = $request->file('Image')->store('produit_images', 'public');
+    // Delete the old image if it exists
+    if ($produit->image) {
+        Storage::disk('public')->delete($produit->image);
+    }
+    $produit->image = $imagePath;
+
+}
+
+
+// Save the updated product
+$produit->save();
+//dd($produit->save());
+// Redirect with success message
+return redirect()->route('dashboard.produitDachbord')->with('success', 'Product updated successfully!');
+   
     }
 
     /**
@@ -107,11 +147,22 @@ class ProduitsController extends Controller
      */
     public function destroy($id)
     {
-        $article = Produits::findOrFail($id);
-        $article->delete();
+        $produit = Produits::findOrFail($id);
+        $produit->delete();
 
         return redirect()->back()->with('success', 'Product deleted successfully!'); 
     }
+    public function searchProduits(Request $request)
+    {
+        $searchProduits = $request->input('searchProduit');
+
+        $produits = Produits::where('name', 'like', '%' . $searchProduits . '%')->get();
+
+// dd($produits);
+        return view('z2', compact('produits'));
+    }
+
+    
 }
 
 
