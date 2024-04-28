@@ -29,7 +29,7 @@ class AuthController extends Controller
             
             auth()->login($user);
 
-            return redirect("/z2test")->with('success', 'register successful');
+            return redirect("/ztest")->with('success', 'register successful');
         } catch (UniqueConstraintViolationException $e) {
             return back()->withErrors("duplicate email address");
         }

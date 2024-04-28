@@ -7,7 +7,7 @@
 		{{-- les image qui afiche sur le home page avec leur contenu  --}}
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img alt="..." class="d-block w-100  " src="{{ asset('https://www.notizienazionali.it/archivi/immagini/2016/Z/zafferano-spezia.jpg') }} ">
+				<img alt="..." class="d-block w-100 h-10" src="{{ asset('https://www.notizienazionali.it/archivi/immagini/2016/Z/zafferano-spezia.jpg') }} ">
 				<div class="carousel-caption">
 					<h5>L'épice des rois</h5>
 					<p>La richesse de la terre et le savoir-faire ancestral se rencontrent dans le safran de Taliouine, une véritable œuvre d'art culinaire</p>
@@ -119,7 +119,6 @@
 
 
 
-
 			{{-- la partie pour aficher les article sur le home page  --}}
 			<div class="row">
 				@foreach ($articls as $articl )
@@ -221,49 +220,7 @@
 	<!-- footer starts -->
 
 
-	<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page d'affichage de produits</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body>
-  <header class="container-fluid bg-dark text-white">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>My Clothing Store</h1>
-      </div>
-    </div>
-  </header>
 
-  <main class="container py-5">
-    <div class="row">
-      <div class="col-md-6">
-        <img src="image-produit.jpg" alt="Image du produit" class="img-fluid">
-      </div>
-      <div class="col-md-6">
-        <h2>Nom du produit</h2>
-        <p>Description du produit</p>
-        <div class="d-flex justify-content-between">
-          <p class="text-muted">Prix: 40€</p>
-          <button type="button" class="btn btn-primary">Ajouter au panier</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-md-12">
-        <h3>Caractéristiques du produit</h3>
-        <ul>
-          <li>Caractéristique 1</li>
-          <li>Caractéristique 2</li>
-          <li>Caractéristique 3</li>
-        </ul>
-      </div>
-    </div>
-  </main>
 
   <footer class="container-fluid bg-dark text-white py-3">
     <div class="row">
@@ -277,6 +234,12 @@
 </body>
 </html>
 
+
+{{-- --------------------------------------- --}}
+
+
+
+{{-- ----------------------------------------- --}}
 
 
 	<footer class="bg-dark p-2 text-center">

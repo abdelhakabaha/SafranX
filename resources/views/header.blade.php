@@ -26,12 +26,12 @@
 
 
                   {{-- //forme de recherche  --}}
-				  @if (request()->is('ztest'))
+				  @if (request()->is('/'))
 				  <form action="{{ route('article.search') }}" method="GET">
 					<input type="text" name="search" placeholder="Rechercher par titre">
 					<button type="submit">Rechercher</button>
 					</form>
-  				@elseif (request()->is('/'))
+  				@elseif (request()->is('/productPage'))
 				  <form action="{{ route('produits.search') }}" method="GET">
 					<input type="text" name="searchProduit" placeholder="Rechercher par name">
 					<button type="submit">Rechercher</button>
@@ -39,16 +39,13 @@
 				  @endif
 					
 					<li class="nav-item">
-						<a class="nav-link" href="#">Home</a>
+						<a class="nav-link" href="{{ route('home') }}">Home</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#about">About</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#services">Services</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#portfolio">Portfolio</a>
+						<a class="nav-link" href="{{ route('productPage') }}">Produit</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{ route('register') }}">register</a>
@@ -56,6 +53,23 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{{ route('auth.login') }}">login</a>
 					</li>
+					@isset($items)
+						
+					{{ $items }}
+					<a href="{{ route('panier') }}" class="text-yellow-400 hover:text-gray-100 mx-2" src=>
+						<img width="86"   height="86"src="https://doeremilavender.com/wp-content/uploads/2019/06/5a385f7f981196.8903932415136439036229.png"></i>
+						  </a>
+					@else
+					<a href="{{ route('panier') }}" class="text-yellow-400 hover:text-gray-100 mx-2" src=>
+						<img width="86"   height="86"src="https://doeremilavender.com/wp-content/uploads/2019/06/5a385f7f981196.8903932415136439036229.png"></i>
+						  </a>
+					@endif
+			
+
+
+
+
+
 				</ul>
 			</div>
 		</div>

@@ -16,10 +16,17 @@ class User extends Authenticatable
     {
         return $this->hasMany(Articl::class);
     }
-
+    public function produits()
+    {
+        return $this->hasMany(Articl::class);
+    }
     public function categories()
     {
         return $this->hasMany(Category::class);
+    }
+    public function commande()
+    {
+        return $this->hasMany(commande::class);
     }
 
     /**

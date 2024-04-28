@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\commande;
 use App\Models\Produits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -20,7 +21,8 @@ class ProduitsController extends Controller
     public function produitsHome()
     {
         $produits = Produits::all(); 
-        return view('z2', compact('produits'));
+        $items = commande::where('user_id', auth()->id())->where('isValid', false)->count();
+        return view('productPage', compact('produits', 'items'));
     }
     
 
@@ -83,7 +85,7 @@ class ProduitsController extends Controller
      */
     public function show(Produits $produits)
     {
-        //
+        
     }
 
     /**
@@ -159,7 +161,7 @@ return redirect()->route('dashboard.produitDachbord')->with('success', 'Product 
         $produits = Produits::where('name', 'like', '%' . $searchProduits . '%')->get();
 
 // dd($produits);
-        return view('z2', compact('produits'));
+        return view('productPage', compact('produits'));
     }
 
     

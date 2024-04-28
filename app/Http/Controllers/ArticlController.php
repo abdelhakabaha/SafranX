@@ -13,9 +13,9 @@ class ArticlController extends Controller
      */
     public function articleHome()
     {
-        $articls = Articl::get(); // Récupérer tous les articles
+        $articls = Articl::all(); // Récupérer tous les articles
      
-        return view('z', compact('articls'));
+        return view('home', compact('articls'));
     }
     public function index()
     {
@@ -105,7 +105,7 @@ class ArticlController extends Controller
         $articleData = $request->validate([
             'title' => 'required|max:255',
             'description' => 'required',
-            'Image' => 'required',
+            'Image' => '',
         ]);
 
         // Mise à jour des données de l'article
@@ -154,7 +154,7 @@ class ArticlController extends Controller
         $articls = Articl::where('titre', 'like', '%' . $searchArticl . '%')->get();
 
 // dd($articls);
-        return view('z', compact('articls'));
+        return view('home', compact('articls'));
     }
 
 }

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticlController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\ProduitsController;
 use App\Http\Controllers\Auth\AuthController;
 
@@ -20,18 +21,14 @@ use App\Http\Controllers\Auth\AuthController;
 */
 
 Route::get('/', function () {
-    return view('z2');
-})->name('z2');
-
-Route::get('/home', function () {
     return view('home');
+})->name('home');
+
+Route::get('/test', function () {
+    return view('test');
 });
-Route::get('/ztest', function () {
-    return view('z');
-});
-Route::get('/header', function () {
-    return view('header');
-});
+Route::get('/panier', [CommandeController::class, 'index'])->name('panier');
+
 
 Route::get('/dashboard', function () {
     return view('DashboardAdmin');
@@ -43,6 +40,10 @@ Route::get('/dashboard', function () {
     return view('DashboardAdmin');
 });
 
+
+Route::post('/cartStore/{id}', [CommandeController::class,'store'])->name('cartStore');
+Route::get('/getCart/{id}', [CommandeController::class,'index'])->name('getCart');
+
 // Route::get('/DashboardAdmin',  [UserController::class, 'index'])->name('index');
 
 
@@ -50,8 +51,8 @@ Route::get('/dashboard', function () {
 //les Route de Dashboards d'admin (CRUD des article , produit et category).
 Route::get('/dashboard', [UserController::class, 'index'])->name('dachboard.index');
 Route::get('/dashboard.ArticleDachbord',  [ArticlController::class, 'index'])->name('dashboard.ArticleDachbord');
-Route::get('/ztest',  [ArticlController::class, 'articleHome'])->name('ztest');
-Route::get('/',  [ProduitsController::class, 'produitsHome'])->name('z2');
+Route::get('/',  [ArticlController::class, 'articleHome'])->name('home');
+Route::get('/home',  [ProduitsController::class, 'produitsHome'])->name('productPage');
 
 
 Route::get('/dashboard.produitDachbord',  [ProduitsController::class, 'index'])->name('dashboard.produitDachbord');
