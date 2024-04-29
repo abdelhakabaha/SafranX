@@ -2,16 +2,11 @@
 <p align="center">
     <a href="https://SafranX.com" target="_blank">
          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/20ddaa45163911.5828946fc5bcf.jpg"
-            width="400" alt="safran logo">
+         width="400" alt="safran logo">
     </a>
 </p>
 
    
-
-
-
-
-
 ## SafranX : Présentation, commercialisation et valorisation de l'or rouge marocain
 
 ## Nous visons à devenir la référence en matière de commercialisation et de valorisation du safran marocain, l'or rouge du pays.
@@ -19,19 +14,19 @@ Notre mission est de développer une plateforme intuitive qui simplifie la comme
 
 ## Lien Trello Planification
 
-https/
+[https/](https://trello.com/b/wgUVL4uk/safranx)
 
 ## Lien de Presentation 
 
-https/
+[https://trello.com/b/wgUVL4uk/safranx](https://prezi.com/p/edit/en0-oc2b3nom/)
 
 ### Lien vers le référentiel
 
-https://github.com/abdelhakabaha/fille_rouge
+https://github.com/abdelhakabaha/SafranX.git
 
 Clonez le référentiel du projet :
 
-$ git clone git@github.com:
+$ git clone [git@github.com:](https://github.com/abdelhakabaha/SafranX.git)
 
 $ cd SafranX
 
@@ -49,8 +44,9 @@ $ php artisan serve
 
 ## Conception
 
-   
-<img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/20ddaa45163911.5828946fc5bcf.jpg"
+   Daigramme de class
+<img src="<img width="547" alt="image" src="https://github.com/abdelhakabaha/SafranX/assets/144785981/0b89817a-e60c-4aa5-b442-139091ad1bf7">
+
 
 
          
