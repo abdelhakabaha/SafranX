@@ -3,7 +3,6 @@
 		<div class="carousel-indicators">
 			<button aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators" type="button"></button>
 		</div>
-
 		{{-- les image qui afiche sur le home page avec leur contenu  --}}
 		<div class="carousel-inner">
 			<div class="carousel-item active">
@@ -25,7 +24,7 @@
 			<div class="carousel-item">
 				<img alt="..." class="d-block w-100" src="{{ asset('https://th.bing.com/th/id/OIP.Q-ZARiRUw2ZaUZ4RsVfzOgEsC9?pid=ImgDet&w=178&h=112&c=7&dpr=1.5') }}">
 				<div class="carousel-caption">
-					<h5>True Construction</h5>
+					<h5>L'épice des rois</h5>
 					<p>"La richesse de la terre et le savoir-faire ancestral se rencontrent dans le safran de Taliouine, une véritable œuvre d'art culinaire.</p>
 					<p><a class="btn btn-warning mt-3" href="#">Learn More</a></p>
 				</div>
@@ -33,15 +32,14 @@
 			<div class="carousel-item">
 				<img alt="..." class="d-block w-100" src="{{ asset('https://i.pinimg.com/564x/1d/48/a4/1d48a45627fe0702c5b056a5cdd046ad.jpg') }}">
 				<div class="carousel-caption">
-					<h5>True Construction</h5>
+					<h5>L'épice des rois</h5>
 					<p>"La richesse de la terre et le savoir-faire ancestral se rencontrent dans le safran de Taliouine, une véritable œuvre d'art culinaire.</p>
 					<p><a class="btn btn-warning mt-3" href="#">Learn More</a></p>
 				</div>
 			</div>
-
-
 		</div><button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span></button> <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="visually-hidden">Next</span></button>
-	</div><!-- about section starts -->
+	</div>
+
 	<section class="about section-padding" id="about">
 		<div class="container">
 			<div class="row">
@@ -59,65 +57,18 @@
 				</div>
 			</div>
 		</div>
-	</section><!-- about section Ends -->
-	<!-- services section Starts -->
-	<section class="services section-padding" id="services">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="section-header text-center pb-5">
-						<h2>Our Services</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur<br>
-						adipisicing elit. Non, quo.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-12 col-md-12 col-lg-4">
-					<div class="card text-white text-center bg-dark pb-2">
-						<div class="card-body">
-							<i class="bi bi-laptop"></i>
-							<h3 class="card-title">Best Quality</h3>
-							<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi modi temporibus alias iste. Accusantium?</p><button class="btn bg-warning text-dark">Read More</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 col-md-12 col-lg-4">
-					<div class="card text-white text-center bg-dark pb-2">
-						<div class="card-body">
-							<i class="bi bi-journal"></i>
-							<h3 class="card-title">Sustainability</h3>
-							<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi modi temporibus alias iste. Accusantium?</p><button class="btn bg-warning text-dark">Read More</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 col-md-12 col-lg-4">
-					<div class="card text-white text-center bg-dark pb-2">
-						<div class="card-body">
-							<i class="bi bi-intersect"></i>
-							<h3 class="card-title">Integrity</h3>
-							<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi modi temporibus alias iste. Accusantium?</p><button class="btn bg-warning text-dark">Read More</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section><!-- services section Ends -->
-	<!-- portfolio strats -->
+	</section>
+            
 	<section class="portfolio section-padding" id="portfolio">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="section-header text-center pb-5">
-						<h2>Our Projects</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur<br>
-						adipisicing elit. Non, quo.</p>
+						<h2>Épices d'Or: À la Découverte du Monde du Safran</h2>
+						<p>Plongez dans un monde d'épices envoûtant avec notre site dédié au safran. Explorez la culture, les secrets de sa culture et ses utilisations variées à travers des articles captivants. Laissez-vous inspirer par la richesse et la diversité de cette précieuse épice aux multiples facettes</p>
 					</div>
 				</div>
 			</div>
-
-
-
 
 			{{-- la partie pour aficher les article sur le home page  --}}
 			<div class="row">
@@ -134,11 +85,10 @@
 				</div>
 				@endforeach
 			</div>
-		</div>
+		</div>	
+	</section>
+	
 
-		
-	</section><!-- portfolio ends -->
-	<!-- team starts -->
 	<section class="team section-padding" id="team">
 		<div class="container">
 			<div class="row">
@@ -197,29 +147,7 @@
 
 
 		
-	</section><!-- team ends -->
-	<!-- Contact starts -->
-	{{-- <section class="contact section-padding" id="contact">
-		<div class="container mt-5 mb-5">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="section-header text-center pb-5">
-						<h2>Contact Us</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur<br>
-						adipisicing elit. Non, quo.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row m-0">
-				<div class="col-md-12 p-0 pt-4 pb-4">
-					<!--for getting the form download the code from download button-->
-				</div>
-			</div>
-		</div>
-	</section><!-- contact ends --> --}}
-	<!-- footer starts -->
-
-
+	</section>
 
 
   <footer class="container-fluid bg-dark text-white py-3">
@@ -228,11 +156,10 @@
         <p>&copy; 2024 My Clothing Store</p>
       </div>
     </div>
-  </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
-</html>
+
 
 
 {{-- --------------------------------------- --}}

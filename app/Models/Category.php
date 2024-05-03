@@ -18,7 +18,7 @@ public function user()
 protected $fillable = [
     'name',
     'user_id',
-    // Add other fillable attributes here if needed
+  
 ];
 
 

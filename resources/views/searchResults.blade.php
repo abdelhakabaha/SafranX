@@ -1,4 +1,4 @@
-<!-- resources/views/search-results.blade.php -->
+
 
 @foreach ($articls as $articl)
     <div>

@@ -14,7 +14,7 @@ class ArticlController extends Controller
     public function articleHome()
     {
         $articls = Articl::all(); // Récupérer tous les articles
-     
+    
         return view('home', compact('articls'));
     }
     public function index()

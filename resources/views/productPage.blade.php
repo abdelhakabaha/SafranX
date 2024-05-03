@@ -15,13 +15,9 @@
         class="visually-hidden">Previous</span></button> <button class="carousel-control-next" data-bs-slide="next"
     data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true"
         class="carousel-control-next-icon"></span> <span class="visually-hidden">Next</span></button>
-</div><!-- about section starts -->
+</div>
 
-<!-- services section Starts -->
-
-
-
-<!-- portfolio strats -->
+<!
 <section class="portfolio section-padding" id="portfolio">
     <div class="container">
         <div class="row">
@@ -59,53 +55,9 @@
     </div>
 
 
-    {{-- <div class="row">
-        <div class="container">
-            @foreach ($produits as $produit)
-                <div class="row justify-content-center align-items-center height">
-                    <div class="card p-3" style="width: 350px;">
-                        <div class="row justify-content-between align-items-center">
-                            <div class="col mt-2">
-                                <h4 class="text-uppercase">Ikea</h4>
-                                <div class="mt-5">
-                                    <h5 class="text-uppercase mb-0">{{ "$produit->titre" }}</h5>
-                                    <h1 class="main-heading mt-0">{{ "$produit->type" }}</h1>
-                                    <div class="d-flex flex-row user-ratings">
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h6 class="text-muted ml-1">4/5</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col image">
-                                <img src="{{ asset('storage/' . $produit->image) }}" width="200">
-                            </div>
-                        </div>
 
-                        <div class="row justify-content-between align-items-center mt-2 mb-2">
-                            <span>le prix de produit </span>
-                            <div class="colors">
-                                <span class="color-circle bg-red"></span>
-                                <span class="color-circle bg-blue"></span>
-                                <span class="color-circle bg-yellow"></span>
-                                <span class="color-circle bg-purple"></span>
-                            </div>
-                        </div>
+</section>
 
-                        <p>{{ "$produit->description" }}.</p>
-                        <button class="btn btn-danger">Add to cart</button>
-                    </div>
-            	</div>
-            @endforeach
-        </div>
-    </div> --}}
-
-</section><!-- portfolio ends -->
-<!-- team starts -->
 <section class="team section-padding" id="team">
     <div class="container">
         <div class="row">
@@ -184,18 +136,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         @if (count($produits) > 0)
             <table>
                 <thead>
@@ -223,14 +163,12 @@
 
         <script>
             function confirmOrder() {
-                // Envoyer une requête pour confirmer la commande
-                // Marquer les produits comme "isOrdered"
-                // Vider le panier
+
             }
         </script>
 
     </footer>
-    <!-- footer ends -->
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>

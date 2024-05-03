@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Détails de l'article</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Personnalisez vos styles CSS ici */
-    .article-full-width {
-      transition: all 0.3s ease-in-out; /* Animation de transition pour le passage en plein écran */
-    }
-  </style>
-</head>
-<body>
-
+@include('header');
+<br>
+<br>
+<br>
 	<div class="container py-4">
 		<div class="row">
 		  <div class="col-md-8 offset-md-2">

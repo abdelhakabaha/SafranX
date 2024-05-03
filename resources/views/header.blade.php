@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--divinectorweb.com-->
+
 <head>
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -64,11 +64,6 @@
 						<img width="86"   height="86"src="https://doeremilavender.com/wp-content/uploads/2019/06/5a385f7f981196.8903932415136439036229.png"></i>
 						  </a>
 					@endif
-			
-
-
-
-
 
 				</ul>
 			</div>

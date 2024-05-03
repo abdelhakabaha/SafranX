@@ -18,6 +18,7 @@ class CommandeController extends Controller
     public function index()
     {
         $items = commande::where('user_id', auth()->id())->where('isValid', false)->with('produit')->get();
+        // dd($items);
         return view('panier', compact('items'));
     }
 
