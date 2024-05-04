@@ -45,7 +45,15 @@ $ php artisan serve
 ## Conception
 
    Daigramme de class
-<img src="<img width="547" alt="image" src="https://github.com/abdelhakabaha/SafranX/assets/144785981/0b89817a-e60c-4aa5-b442-139091ad1bf7">
+<img width="547" alt="image" src="https://github.com/abdelhakabaha/SafranX/assets/144785981/0b89817a-e60c-4aa5-b442-139091ad1bf7">
+
+
+
+   Diagramme de cas D'utilisation 
+
+<img width="547" alt="image" src="https://github.com/abdelhakabaha/SafranX/assets/144785981/73144ee9-a0bc-42b0-9d0d-6cbbc042fb66">
+                               
+
 
 
 
