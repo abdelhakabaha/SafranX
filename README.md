@@ -44,14 +44,25 @@ $ php artisan serve
 
 ## Conception
 
-   Daigramme de class
+
+  Daigramme de class
+
 <img width="547" alt="image" src="https://github.com/abdelhakabaha/SafranX/assets/144785981/0b89817a-e60c-4aa5-b442-139091ad1bf7">
 
 
 
    Diagramme de cas D'utilisation 
 
-<img width="547" alt="image" src="https://github.com/abdelhakabaha/SafranX/assets/144785981/73144ee9-a0bc-42b0-9d0d-6cbbc042fb66">
+<img width="547" alt="image" src="https://github.com/abdelhakabaha/SafranX/assets/144785981/7b715869-f3b8-4155-8bf1-a81240dce985">
+
+## Access to Dshboard
+
+|      Email     | Password | 
+|----------------|----------|
+| admin@gmail.com| 00000000 |
+
+
+
                                
 
 
